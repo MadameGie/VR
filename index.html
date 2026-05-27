@@ -2,21 +2,31 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+
+  <!-- ✅ FIX iOS FULLSCREEN VIEWPORT -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover" />
 
   <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
 
   <style>
-    body { margin: 0; overflow: hidden; }
-
     html, body {
+      margin: 0;
+      padding: 0;
       width: 100%;
       height: 100%;
+      overflow: hidden;
+      position: fixed;
+      top: 0;
+      left: 0;
     }
 
+    /* ✅ FORCE CANVAS FULL SCREEN ALL DEVICE */
     canvas {
       width: 100% !important;
       height: 100% !important;
+      position: fixed !important;
+      top: 0;
+      left: 0;
     }
 
     #ui {
@@ -47,7 +57,7 @@
   vr-mode-ui="enabled: true"
   device-orientation-permission-ui="enabled: true"
   embedded
-  style="width:100%; height:100%;"
+  style="position:fixed; top:0; left:0; width:100%; height:100%;"
 >
 
   <!-- CAMERA -->
